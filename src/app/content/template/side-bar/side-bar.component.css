@@ -1,16 +1,18 @@
-.example-container {
-  width: 500px;
-  height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+.side-container {
+  background: #eee;
+  width: 250px;
+  height: 100vh;
 }
 
-.example-sidenav-content {
+.side {
+  width: inherit;
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  text-align: left;
 }
 
-.example-sidenav {
-  padding: 20px;
+.side > button {
+  text-align: left;
+  font-size: large;
+  font-weight: bolder;
 }

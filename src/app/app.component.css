@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.main-content {
+  margin-left: 15px;
+}

@@ -1,12 +1,11 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>SIDE BAR</p>
+<mat-sidenav-container class="side-container">
+  <mat-sidenav class="side" mode="side" opened>
+      <button mat-button *ngFor="let menu of listMenu" (click)="onClickMenu(menu)">{{ menu.title }}</button>
+  </mat-sidenav>
+</mat-sidenav-container>
+
+<!--mat-drawer-container class="side-container">
+  <mat-drawer class="side" mode="side" opened>
+    <button mat-button *ngFor="let menu of listMenu" (click)="onClickMenu(menu)">{{ menu.title }}</button>
   </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div>
-
-</mat-drawer-container>
+</!--mat-drawer-container-->
