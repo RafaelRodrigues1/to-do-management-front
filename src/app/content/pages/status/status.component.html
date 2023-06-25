@@ -1,3 +1,49 @@
-<p>
-  status works!
-</p>
+<form #form="ngForm">
+  <table mat-table [dataSource]="statusDataSource" class="mat-elevation-z6">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let statusTable">
+        <input [value]="statusTable.status.name" placeholder="Título" [readonly]="!statusTable.edit" matInput>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Descrição</th>
+      <td mat-cell *matCellDef="let statusTable">
+        <input [value]="statusTable.status.description" placeholder="Descrição" [readonly]="!statusTable.edit" matInput>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="registerDate">
+      <th mat-header-cell *matHeaderCellDef>Data de registro</th>
+      <td mat-cell *matCellDef="let statusTable">{{statusTable.status.registerDate | date: 'dd/MM/yyyy'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="alterationDate">
+      <th mat-header-cell *matHeaderCellDef>Data de alteração</th>
+      <td mat-cell *matCellDef="let statusTable">{{statusTable.status.alterationDate | date: 'dd/MM/yyyy'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let statusTable">
+        <button mat-button (click)="editStatus(statusTable.status)">
+          <mat-icon fontIcon="edit"></mat-icon>
+        </button>
+        <button mat-button (click)="deleteStatus(statusTable.status)">
+          <mat-icon fontIcon="delete"></mat-icon>
+        </button>
+        <button mat-button *ngIf="statusTable.edit" (click)="updateStatus(statusTable)">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                  showFirstLastButtons>
+  </mat-paginator>
+</form>

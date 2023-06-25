@@ -1,0 +1,12 @@
+.tool-bar-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  background-color: coral;
+  height: 75px;
+  padding: 0 15px 0 15px;
+}
+
+h2 {
+  margin: 0;
+}

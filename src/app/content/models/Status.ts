@@ -5,6 +5,6 @@ export interface Status {
   name: string;
   description: string;
   registerDate: Date;
-  alterationDate: Date;
-  registerUser: User;
+  alterationDate?: Date;
+  registerUser?: User;
 }

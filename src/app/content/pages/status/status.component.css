@@ -1,0 +1,11 @@
+table {
+  width: 99%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+tr:hover:not(.mat-header-row ) {
+  background: #efefef;
+}

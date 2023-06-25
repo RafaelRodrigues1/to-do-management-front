@@ -1,3 +1,4 @@
+import { PageCommonModule } from './../../page-common.module';
 import { StatusComponent } from './status.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,8 @@ export const appRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(appRoutes),
-    CommonModule
+    CommonModule,
+    PageCommonModule
   ],
   declarations: [StatusComponent]
 })

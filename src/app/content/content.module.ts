@@ -3,6 +3,7 @@ import { TemplateModule } from './template/template.module';
 import { PagesModule } from './pages/pages.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ToolBarComponent } from './template/tool-bar/tool-bar.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
 
   ],
   exports: [
-    SideBarComponent
+    SideBarComponent,
+    ToolBarComponent
   ]
 })
 export class ContentModule { }

@@ -2,6 +2,7 @@ import { PageCommonModule } from './../page-common.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { ToolBarComponent } from './tool-bar/tool-bar.component';
 
 @NgModule({
   imports: [
@@ -10,10 +11,12 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 
   ],
   declarations: [
-    SideBarComponent
+    SideBarComponent,
+    ToolBarComponent
   ],
   exports: [
-    SideBarComponent
+    SideBarComponent,
+    ToolBarComponent
   ]
 })
 export class TemplateModule { }
