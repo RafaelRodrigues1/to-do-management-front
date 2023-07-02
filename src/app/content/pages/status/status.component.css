@@ -6,6 +6,10 @@ mat-form-field {
   width: 100%;
 }
 
-tr:hover:not(.mat-header-row ) {
+tr:hover:not(.mat-header-row, .edit-row) {
   background: #efefef;
+}
+
+.edit-row {
+  background: rgb(247, 211, 198);
 }

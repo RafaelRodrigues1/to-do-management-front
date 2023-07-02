@@ -20,18 +20,23 @@ export class StatusComponent implements OnInit {
   ngOnInit() {
   }
 
-  editStatus(status: Status) {
-    this.statusTableList
-      .filter(statusTable => statusTable.status.id === status.id)
-      .forEach(statusTable => statusTable.edit = true);
-    this.statusDataSource.setData(this.statusTableList);
+  editStatus(status: Status, edit: boolean) {
+    this.setEditStatus(status, edit);
   }
 
   deleteStatus(status: Status) {
 
   }
 
-  updateStatus(status: Status) {
+  updateStatus(status: Status, edit: boolean) {
+    this.setEditStatus(status, edit);
+  }
+
+  setEditStatus(status: Status, edit: boolean) {
+    this.statusTableList
+      .filter(statusTable => statusTable.status.id === status.id)
+      .forEach(statusTable => statusTable.edit = edit);
+    this.statusDataSource.setData(this.statusTableList);
   }
 }
 
