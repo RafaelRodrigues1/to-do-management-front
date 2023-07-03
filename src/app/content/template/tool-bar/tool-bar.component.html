@@ -1,6 +1,11 @@
+
 <header class="tool-bar-header">
-  <h2>
-    tool-bar works!
-  </h2>
+  <div style="width: 250px;"></div>
+  <ng-container *ngFor="let action of actions">
+    <button *ngIf="action.render" (click)="execute(action)" mat-raised-button extended [disabled]="action.disabled" [color]="action.typeColor">
+      <mat-icon>{{ action.icon }}</mat-icon>
+      {{ action.label }}
+    </button>
+  </ng-container>
 </header>
 

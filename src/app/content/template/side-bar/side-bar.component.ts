@@ -1,6 +1,7 @@
 import { Menu } from './../models/Menu';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Action } from '../models/Action';
 
 @Component({
   selector: 'app-side-bar',

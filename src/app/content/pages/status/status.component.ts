@@ -2,6 +2,8 @@ import { Status } from './../../models/Status';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
 import {Observable, ReplaySubject} from 'rxjs';
+import { ToolBarComponent } from '../../template/tool-bar/tool-bar.component';
+import { ToolbarService } from '../../template/services/toolbar-service';
 
 @Component({
   selector: 'app-status',
@@ -15,7 +17,7 @@ export class StatusComponent implements OnInit {
   statusDataSource = new StatusDataSource(this.statusTableList);
 
 
-  constructor() { }
+  constructor(private toolbarService: ToolbarService) { }
 
   ngOnInit() {
   }
@@ -30,6 +32,7 @@ export class StatusComponent implements OnInit {
 
   updateStatus(status: Status, edit: boolean) {
     this.setEditStatus(status, edit);
+    this.toolbarService.add({label: "SALVAR", typeColor: "primary", icon: "save", render: true, executor: this.save});
   }
 
   setEditStatus(status: Status, edit: boolean) {
@@ -37,6 +40,11 @@ export class StatusComponent implements OnInit {
       .filter(statusTable => statusTable.status.id === status.id)
       .forEach(statusTable => statusTable.edit = edit);
     this.statusDataSource.setData(this.statusTableList);
+  }
+
+  save() {
+    console.log('SAVE');
+
   }
 }
 
