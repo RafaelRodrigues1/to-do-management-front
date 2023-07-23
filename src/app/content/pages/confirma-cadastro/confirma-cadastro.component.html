@@ -1,0 +1,7 @@
+<p *ngIf="hasUser;else noUser">
+  Com usuário
+</p>
+
+<ng-template #noUser>
+  <p>Sem usuário</p>
+</ng-template>

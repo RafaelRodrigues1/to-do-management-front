@@ -1,7 +1,7 @@
 export interface User {
   id: number;
   name: string;
-  matriculation: string;
+  registration: string;
   email: string;
   registerDate: Date;
 }
