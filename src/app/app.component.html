@@ -1,8 +1,12 @@
-<app-tool-bar  class="tool-bar"></app-tool-bar>
+<div *ngIf="systemTemplate;else noSystemTemplate">
+  <app-tool-bar class="tool-bar"></app-tool-bar>
 
-<div class="app">
-  <app-side-bar class="side-bar"></app-side-bar>
+  <div class="app">
+    <app-side-bar class="side-bar"></app-side-bar>
 
-  <router-outlet class="main-content"></router-outlet>
+    <router-outlet class="main-content"></router-outlet>
+  </div>
 </div>
-
+<ng-template #noSystemTemplate>
+  <router-outlet></router-outlet>
+</ng-template>
